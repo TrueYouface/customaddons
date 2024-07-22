@@ -14,22 +14,24 @@
 					<field name="segment_id"/>
 				</xpath>
 
-				<xpath expr="//group[@name='banks']" position="after">
+				<xpath expr="//group[@name='purchase']" position="after">
 					<group string="Credit Insurance" name="credit_insurance" attrs="{'invisible': [('country_id', '=', 224)]}">
 						<field name="credit_insurance"/>
 						<field name="credit_insurance_validity"/>
 					</group>
 				</xpath>
 
-				<xpath expr="//button[@name='open_route_map']" position="replace">
-					<button type="object"
-							name="action_view_v_cari_urun"
-							class="oe_stat_button"
-							icon="fa-code-fork"
-							attrs="{'invisible': [('v_cari_urun_count', '=', 0)]}">
-						<field name="v_cari_urun_count" widget="statinfo" string="Products"/>
-					</button>
-				</xpath>
+<!--				TODO: The button below does not exist-->
+
+<!--				<xpath expr="//button[@name='open_route_map']" position="replace">-->
+<!--					<button type="object"-->
+<!--							name="action_view_v_cari_urun"-->
+<!--							class="oe_stat_button"-->
+<!--							icon="fa-code-fork"-->
+<!--							attrs="{'invisible': [('v_cari_urun_count', '=', 0)]}">-->
+<!--						<field name="v_cari_urun_count" widget="statinfo" string="Products"/>-->
+<!--					</button>-->
+<!--				</xpath>-->
 
 				<xpath expr="/form/sheet/group/group//field[@name='mobile']" position="after">
             		<field name="z_contact_name"/>
@@ -50,7 +52,7 @@
 				<xpath expr="/form/sheet/notebook/page[@name='internal_notes']" position="attributes">
 					<attribute name="invisible">1</attribute>
 				</xpath>
-				<xpath expr="/form/sheet/notebook/page[@name='accounting']" position="after">
+				<xpath expr="/form/sheet/notebook/page[@name='contact_addresses']" position="after">
 						<page name="internal_notes" string="Notes" modifiers="{}">
 							<group colspan="2" col="2" modifiers="{}">
 								<separator string="Warning on the Sales Order" colspan="4" modifiers="{}"/>
