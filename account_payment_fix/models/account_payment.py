@@ -26,6 +26,9 @@ class AccountPayment(models.Model):
         string='Payment Method',
     )
 
+    account_move = fields.Many2one('account.move', string='Invoice', readonly=True)
+
+
 
     def _compute_payment_method_description(self):
         for rec in self:
@@ -122,7 +125,7 @@ class AccountPayment(models.Model):
         Sobre escribimos y desactivamos la parte del dominio de la funcion
         original ya que se pierde si se vuelve a entrar
         """
-        if not self.invoice_ids:
+        if not self.account_move:
             # Set default partner type for the payment type
             if self.payment_type == 'inbound':
                 self.partner_type = 'customer'

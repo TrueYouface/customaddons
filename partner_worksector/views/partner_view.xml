@@ -3,7 +3,7 @@
     <data>
 
         <record id="res_partner_form_view_marketing" model="ir.ui.view">
-            <field name="name">res.partner.form</field>
+            <field name="name">res.partner.form.nace</field>
             <field name="model">res.partner</field>
             <field name="priority" eval="100"/>
             <field name="inherit_id" ref="base.view_partner_form"/>
@@ -76,7 +76,7 @@
         <record id="action_res_partner_worksector" model="ir.actions.act_window">
             <field name="name">Customer Sectors</field>
             <field name="res_model">partner.worksector</field>
-<!--            <field name="view_type">form</field>-->
+            <!--            <field name="view_type">form</field>-->
             <field name="view_mode">tree,form</field>
         </record>
 

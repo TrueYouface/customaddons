@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="invoice_form_currency_rate" model="ir.ui.view">
+		<field name="name">account.invoice.currency.rate.form</field>
+		<field name="model">account.move</field>
+		<field name="priority">99</field>
+		<field name="inherit_id" ref="account.view_move_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='currency_id']/parent::div" position="after">
+				<field name="foreign_currency" invisible="1"/>
+				<field name="use_custom_rate"
+					attrs="{'invisible':[('foreign_currency','=',False)],
+							'readonly':[('state','!=', 'draft')]}" />
+				<field name="currency_rate"
+					attrs="{'invisible':[('use_custom_rate','=',False)],
+							'readonly':[('state','!=', 'draft')]}" />
+				<field name="currency_rate_related"
+					attrs="{'invisible':[('use_custom_rate','=',True)],
+							'readonly':['|', ('use_custom_rate','=',False), ('state','!=', 'draft')]}" />
+			</xpath>
+		</field>
+	</record>
+
+	<record id="supplier_invoice_form_currency_rate" model="ir.ui.view">
+		<field name="name">account.invoice.supplier.currency.rate.form</field>
+		<field name="model">account.move</field>
+		<field name="priority">99</field>
+		<field name="inherit_id" ref="account.view_move_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='currency_id']" position="after">
+				<field name="foreign_currency" invisible="1"/>
+				<field name="use_custom_rate"
+					attrs="{'invisible':[('foreign_currency','=',False)],
+							'readonly':[('state','!=', 'draft')]}" />
+				<field name="currency_rate"
+					attrs="{'invisible':[('use_custom_rate','=',False)],
+							'readonly':[('state','!=', 'draft')]}" />
+				<field name="currency_rate_related"
+					attrs="{'invisible':[('use_custom_rate','=',True)],
+							'readonly':['|', ('use_custom_rate','=',False), ('state','!=', 'draft')]}" />
+			</xpath>
+		</field>
+	</record>
+
+</odoo>
