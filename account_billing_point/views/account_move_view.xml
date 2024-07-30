@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+      <record id="billing_point_view_move_form" model="ir.ui.view">
+          <field name="name">account.move.billing.point.form</field>
+          <field name="model">account.move</field>
+          <field name="inherit_id" ref="account.view_move_form"/>
+          <field name="arch" type="xml">
+              <data>
+                  <xpath expr="//field[@name='user_id']" position="after">
+                      <field name="billing_point_id" domain="[('company_id', '=', company_id)]"/>
+                  </xpath>
+                </data>
+          </field>
+      </record>
+      <record id="billing_point_supplier_view_move_form" model="ir.ui.view">
+          <field name="name">account.move.supplier.billing.point.form</field>
+          <field name="model">account.move</field>
+          <field name="inherit_id" ref="account.view_move_form"/>
+          <field name="arch" type="xml">
+              <data>
+                  <xpath expr="//field[@name='invoice_date']" position="after">
+                      <field name="billing_point_id" domain="[('company_id', '=', company_id)]"/>
+                  </xpath>
+                </data>
+          </field>
+      </record>
+      <record id="billing_point_invoice_tree" model="ir.ui.view">
+          <field name="name">account.move.billing.point.tree</field>
+          <field name="model">account.move</field>
+          <field name="inherit_id" ref="account.view_move_tree"/>
+          <field name="arch" type="xml">
+              <data>
+                  <xpath expr="//field[@name='ref']" position="after">
+                      <field name="billing_point_id" invisible="1" string="Billing Point"/>
+                  </xpath>
+              </data>
+          </field>
+      </record>
+  </data>
+</odoo>
