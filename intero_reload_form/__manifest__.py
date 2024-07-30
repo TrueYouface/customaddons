@@ -31,7 +31,6 @@
     """,
     "depends": ["base", "web"],
     "data": ["views/assets.xml",
-             
              ],
     'qweb' : [
         "static/src/xml/*.xml",
