@@ -4,7 +4,6 @@
     'category': 'General',
     'depends' : ['base','contacts', 'sale', 'stock','l10n_tr_invoice_amount_in_words','base_report_to_printer',
                  'account',
-                 # 'account_check',
                  'mrp'],
     'author' : 'Yigit Budak, MAkifOzdemir,OnurUgur,Codequarters,',
     'description': """
