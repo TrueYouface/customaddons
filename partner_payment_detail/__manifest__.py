@@ -22,7 +22,7 @@
     'name': 'Partner Payment Detail',
     'author': 'Acespritech Solutions Pvt. Ltd.',
     'website': 'http://www.acespritech.com',
-    'version': '16.0.0.1.0',
+    'version': '16.0.1.0.0',
     'category': 'Account',
     'description': """
 Calculate total based on the payable and receivable amount on the partner

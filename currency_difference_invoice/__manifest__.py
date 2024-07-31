@@ -11,7 +11,7 @@
     "author": "Yiğit Budak",
     "website": "https://github.com/yibudak",
     "category": "Accounting",
-    "version": "16.0.0.1.0",
+    "version": "16.0.1.0.0",
     "depends": ["base", "account"],
     "data": [
         "views/res_partner_view.xml",

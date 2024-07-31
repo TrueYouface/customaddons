@@ -1,6 +1,6 @@
 {
     "name": "Currency Rate Turkey",
-    "version": "16.0.0.1.0",
+    "version": "16.0.1.0.0",
     "website": "https://github.com/yibudak",
     "author": "yibudak",
     "category": "Currency",

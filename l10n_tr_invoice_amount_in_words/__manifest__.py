@@ -21,7 +21,7 @@
 
 {
     'name': 'Turkey - Invoice Amount In Words',
-    'version': '16.0.0.1.0',
+    'version': '16.0.1.0.0',
     'category': 'Localization',
     'description': """
 Invoice Amount to Text

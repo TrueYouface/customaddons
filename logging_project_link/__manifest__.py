@@ -7,7 +7,7 @@
     "website": "https://github.com/odoo-turkey/utility-addons",
     "license": "AGPL-3",
     "category": "",
-    "version": "16.0.0.1.0",
+    "version": "16.0.1.0.0",
     "depends": ["project"],
     "data": [
         "views/ir_logging_views.xml",
