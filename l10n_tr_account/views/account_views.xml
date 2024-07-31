@@ -2,6 +2,8 @@
 <odoo>
 	<data>
 
+<!--		TODO: many fields do not exist in the models. add/find them-->
+
 		<record id="view_tax_form_l10n_tr_account" model="ir.ui.view">
 			<field name="name">account.tax.form.l10n_tr_account</field>
 			<field name="model">account.tax</field>
