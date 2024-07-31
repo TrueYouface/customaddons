@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="view_company_form_l10n_tr_account" model="ir.ui.view">
+			<field name="name">res.company.form.l10n_tr_account</field>
+			<field name="model">res.company</field>
+			<field name="inherit_id" ref="base.view_company_form" />
+			<field name="priority">99</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='company_registry']" position="after">
+					<field name="transfer_account_id" />
+				</xpath>
+<!--				<xpath expr="//notebook/page[1]" position="inside">-->
+<!--					<group string="Default Invoice Bank Accounts">-->
+<!--						<field name="invoice_bank_ids" nolabel="1">-->
+<!--							<tree string="Bank Accounts">-->
+<!--								<field name="bank_id" />-->
+<!--								<field name="acc_number" />-->
+<!--								<field name="currency_id" />-->
+<!--								<field name="partner_id" invisible="1" context="{'default_partner_id': parent.partner_id}"/>-->
+<!--							</tree>-->
+<!--						</field>-->
+<!--					</group>-->
+<!--				</xpath>-->
+			</field>
+		</record>
+	</data>
+</odoo>
