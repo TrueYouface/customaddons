@@ -1,32 +1,33 @@
 # Copyright 2023 Yiğit Budak (https://github.com/yibudak)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
-# from odoo import models, fields, api
-#
+from odoo import models, fields, api
+
+
+
+class AccountTax(models.Model):
+    _inherit = "account.tax"
+
+    account_id = fields.Many2one(string="Account",
+                                 comodel_name='account.account',
+                                 domain="[('deprecated', '=', False), ('company_id', '=', company_id), ('account_type', 'not in', ('asset_receivable', 'liability_payable', 'off_balance'))]",
+                                 check_company=True,
+                                 help="Account on which to post the tax amount")
+
+
+
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
+
+    kdv_amount = fields.Monetary(
+        default=0.0,
+        currency_field="company_currency_id",
+        string="Amount Total Currency",
+        compute="_compute_kdv_amount",
+        store=True,
+        help="Total amount in company currency."
+        " We use this field in account reporting.",
+    )
 # TODO: This model file has a function definition that needs to be reworked
-#
-# class AccountTax(models.Model):
-#     _inherit = "account.tax"
-#
-#     account_id = fields.Many2one(string="Account",
-#                                  comodel_name='account.account',
-#                                  domain="[('deprecated', '=', False), ('company_id', '=', company_id), ('account_type', 'not in', ('asset_receivable', 'liability_payable', 'off_balance'))]",
-#                                  check_company=True,
-#                                  help="Account on which to post the tax amount")
-#
-#
-#
-# class AccountMoveLine(models.Model):
-#     _inherit = "account.move.line"
-#
-#     kdv_amount = fields.Monetary(
-#         default=0.0,
-#         currency_field="company_currency_id",
-#         string="Amount Total Currency",
-#         compute="_compute_kdv_amount",
-#         store=True,
-#         help="Total amount in company currency."
-#         " We use this field in account reporting.",
-#     )
 #
 #     @api.depends(
 #         "move_id.date_invoice",

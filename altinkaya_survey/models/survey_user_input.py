@@ -16,11 +16,14 @@ class SurveyUserInput(models.Model):
         string="Invoice",
     )
 
-    # answer_type = fields.Selection(
-    #     selection_add=[
-    #         ("qrcode", "QR Code"),
-    #     ]
-    # )
+    answer_type = fields.Selection(
+        'survey.user_input.line',
+        selection_add=[
+            ("qrcode", "QR Code"),
+        ],
+        ondelete="cascade"
+
+    )
 
     shortened_url = fields.Text(
         string="Shortened URL",
